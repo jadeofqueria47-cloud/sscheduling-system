@@ -1,0 +1,403 @@
+body {
+    font-family: sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Enable flexbox for layout */
+    flex-direction: column; /* Stack header above content */
+    background-image: url("photos/cpsu.png");
+    background-size: cover;
+    min-height: 100vh; /* Take up at least full viewport height */
+    color: white; /* Set the default text color to white */
+  }
+
+  /* Header styles */
+  header {
+    background-color: green; /* School-like blue color */
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed from center to space-between */
+  }
+
+  .school-logo {
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .header-text {
+    text-align: left;
+  }
+
+  .header-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+  }
+
+  /* Logo and text container - added this to group logo and text */
+  .logo-text-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+  }
+
+  /* Navigation container - added this to group desktop nav and mobile toggle */
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Navigation Styles - Desktop */
+  .desktop-nav {
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 15px; /* Changed from margin-right to margin-left */
+  }
+
+  .desktop-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .desktop-nav li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-nav a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .desktop-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  .nav-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .home-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
+  }
+
+  .calendar-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z'/%3E%3C/svg%3E");
+  }
+
+  .profile-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+  }
+
+  .signout-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z'/%3E%3C/svg%3E");
+}
+
+  /* Mobile Navigation Styles */
+  .mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    margin-left: 15px; /* Changed from margin-right to margin-left */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+
+  .mobile-nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Animation for hamburger menu */
+  .mobile-nav-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .mobile-nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0; /* Changed from left: 0 to right: 0 */
+    width: 100%;
+    background-color: #222;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobile-nav li:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .mobile-nav a .nav-icon {
+    margin-right: 10px;
+  }
+
+  .mobile-nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .mobile-nav.active {
+    display: block;
+  }
+
+  /* Media query for mobile view */
+  @media screen and (max-width: 768px) {
+    .desktop-nav {
+      display: none; /* Hide desktop nav on mobile */
+    }
+    
+    .mobile-nav-toggle {
+      display: flex; /* Show mobile nav toggle on mobile */
+    }
+    
+    .header-content {
+      justify-content: space-between;
+    }
+    
+    .header-title {
+      font-size: 18px; /* Smaller title on mobile */
+    }
+    
+    .header-subtitle {
+      font-size: 12px; /* Smaller subtitle on mobile */
+    }
+    
+    .school-logo {
+      height: 40px; /* Smaller logo on mobile */
+    }
+  }
+
+  /* Main content container */
+  .main-container {
+    display: flex; /* Enable flexbox for layout */
+    flex: 1; /* Take remaining space */
+    padding: 20px;
+  }
+
+  #sidebar {
+    width: 200px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for better contrast */
+    color: white;
+  }
+
+  #sidebar h2 {
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: white; /* Changed from #333 to white */
+  }
+
+  .year-item {
+    margin-bottom: 10px;
+    border: 1px solid #eee; /* Add a border around the year item */
+    border-radius: 5px;
+    padding: 5px; /* Add some padding inside the border */
+}
+
+.year-title {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    /* border-bottom: 1px solid #eee; */ /* Remove the bottom border */
+    color: white;
+}
+
+.year-title:hover {
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.sections {
+    display: none; /* Initially hide sections */
+    padding-left: 10px;
+    margin-top: 5px; /* Add a little space between title and sections */
+}
+
+.section-item {
+    cursor: pointer;
+    padding: 5px 0;
+    color: white;
+}
+
+.section-item:hover {
+    color: #00ffff;
+}
+  #schedule-container {
+    flex-grow: 1; /* Allow schedule container to take remaining width */
+  }
+
+  .year-schedule {
+    display: none; /* Initially hide all year schedules */
+  }
+
+  .section-schedule {
+    display: none; /* Initially hide all section schedules */
+    color: white;
+  }
+
+  /* This is the key fix - make active sections display as block */
+  .section-schedule.active {
+    display: block !important; /* Show the active section schedule */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background for better contrast */
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: rgba(50, 50, 50, 0.8); /* Darker header background */
+    font-weight: bold;
+    color: white;
+  }
+  .admin-actions button {
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: black; /* Keep button text black for contrast */
+  }
+  
+  .admin-actions button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .add-button {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .add-button:hover {
+    background-color: #45a049;
+  }
+  
+  #global-add-button {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  /* Styles for form elements */
+  select, input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: black; /* Keep input text black for readability */
+  }
+  
+  select {
+    background-color: white;
+  }
+
+  /* Modal background */
+  .modal-content {
+    background-color: #333; /* Darker background for the modal */
+    color: white; /* White text in modal */
+  }
+
+  /* Set paragraph text to white */
+  p {
+    color: white;
+  }
+
+  /* Set all headings to white */
+  h3 {
+    color: white;
+  }
+  
+  /* Styles for making the scrollbar thinner (WebKit browsers) */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust as needed */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust color and opacity */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust track color */
+}

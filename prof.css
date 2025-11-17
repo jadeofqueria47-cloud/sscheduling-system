@@ -1,0 +1,398 @@
+body {
+    background-image: url("photos/cpsu.png");
+    background-position: 0%;
+    background-size: cover;
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+header {
+    background-color: green;
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 20px; 
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+}
+
+header h1 i {
+    margin-right: 2px;
+}
+
+.mobile-nav {
+    display: block;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Center the icon */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hidden on mobile */
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.nav-links li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Center the icon and text */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.nav-links li a i {
+    margin-right: 5px; /* Adjusted icon spacing in mobile nav */
+}
+
+/* Desktop Navigation Styles */
+.desktop-nav {
+    display: none; /* Initially hidden on mobile */
+}
+
+.desktop-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav ul li {
+    margin: 0 15px;
+}
+
+.desktop-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav ul li a i {
+    margin-right: 5px; /* Adjusted icon spacing in desktop nav */
+}
+
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    header {
+        justify-content: space-between; /* Keep space-between for title and desktop nav */
+    }
+    .mobile-nav {
+        display: none;
+    }
+    .desktop-nav {
+        display: block;
+    }
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjusted width for better responsiveness */
+    max-width: 700px; /* Set a maximum width for larger screens */
+    margin-top: 20px; /* Add some top margin */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Make children stretch to container width */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profile-image-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    position: relative; /* For positioning the remove button */
+}
+
+.profile-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.profile-image-placeholder {
+    font-size: 2em;
+    color: #777;
+}
+
+.remove-profile-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0;
+    display: none; /* Initially hidden */
+}
+
+.profile-image-container:hover .remove-profile-btn {
+    display: block;
+}
+
+.profile-info h2 {
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+}
+
+.profile-info button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Style for the "Edit Profile" button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px; /* Add a little space if needed */
+    text-decoration: none;
+}
+
+.profile-info button:hover {
+    background-color: #0056b3;
+}
+
+.profile-info p {
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+
+.section-title {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Added space for the edit button */
+    gap: 8px;
+    margin-bottom: 15px;
+    align-items: center; /* Align items vertically in the grid */
+}
+
+.info-grid strong {
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+.info-grid button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+.info-grid input[type="text"],
+.info-grid textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: none; /* Initially hidden */
+}
+
+#saveChangesBtn {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#saveChangesBtn:hover {
+    background-color: #4cae4c;
+}
+
+/* Profile Picture Update Styles (within the modal) */
+.upload-form {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Space between file input and upload button */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.upload-form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.upload-form button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.upload-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Remove Profile Picture Button (within the modal) */
+.remove-form {
+    display: flex; /* Use flexbox to align items */
+    justify-content: flex-end; /* Push the remove button to the right */
+    margin-top: 10px; /* Add some space above the remove button */
+}
+
+.remove-profile-button {
+    background-color: #dc3545; /* Red color for remove */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 4%; /* Push it to the right */
+    margin-top: -5%;
+}
+
+.remove-profile-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Message styles */
+.message-container {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 20px;
+    
+}
